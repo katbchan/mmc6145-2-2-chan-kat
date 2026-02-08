@@ -28,10 +28,12 @@ export default function App() {
   const handleGameEnd = () => {
     timerStop();
     setGameStarted(false);
-    setPreviousTime(time);
-    if (bestTime === null || time < bestTime) {
-      setBestTime(time);
+    const finalTime = time;
+    setPreviousTime(finalTime);
+    if (bestTime === null || finalTime < bestTime) {
+      setBestTime(finalTime);
     }
+    timerReset();
   };
 
   const cardTexts = [
